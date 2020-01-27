@@ -1,0 +1,2805 @@
+
+
+[33m
+*** Warning, This code is deprecated and will be removed in future versions:
+The parameter D_name is deprecated.
+This parameter has been renamed to 'diffusivity', which is more mnemonic and more conducive to passing a number literal[39m
+Stack frames: 14
+0: libMesh::print_trace(std::ostream&)
+1: void moose::internal::mooseDeprecatedStream<libMesh::BasicOStreamProxy<char, std::char_traits<char> >, char const (&) [15], std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const (&) [17], std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(libMesh::BasicOStreamProxy<char, std::char_traits<char> >&, bool, char const (&) [15], std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const (&) [17], std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+2: Parser::extractParams(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, InputParameters&)
+3: Parser::walkRaw(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, hit::Node*)
+4: Parser::walk(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, hit::Node*)
+5: hit::Node::walk(hit::Walker*, hit::NodeType)
+6: hit::Node::walk(hit::Walker*, hit::NodeType)
+7: hit::Node::walk(hit::Walker*, hit::NodeType)
+8: Parser::parse(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+9: MooseApp::setupOptions()
+10: MooseApp::run()
+11: ../../moltres-opt() [0x4026f6]
+12: __libc_start_main
+13: ../../moltres-opt() [0x402929]
+
+
+[33m
+*** Warning, This code is deprecated and will be removed in future versions:
+Please use the addVariable(var_type, var_name, params) API instead[39m
+Stack frames: 13
+0: libMesh::print_trace(std::ostream&)
+1: void moose::internal::mooseDeprecatedStream<ConsoleStream const, char const (&) [67]>(ConsoleStream const&, bool, char const (&) [67])
+2: FEProblemBase::addVariable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, libMesh::FEType const&, double, std::set<unsigned short, std::less<unsigned short>, std::allocator<unsigned short> > const*)
+3: VariableNotAMooseObjectAction::addVariable(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+4: PrecursorAction::act()
+5: Action::timedAct()
+6: ActionWarehouse::executeActionsWithAction(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+7: ActionWarehouse::executeAllActions()
+8: MooseApp::runInputFile()
+9: MooseApp::run()
+10: ../../moltres-opt() [0x4026f6]
+11: __libc_start_main
+12: ../../moltres-opt() [0x402929]
+
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialfuel[39m
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialfuel_face[39m
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialfuel_neighbor[39m
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialmoder[39m
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialmoder_face[39m
+
+[33m
+*** Warning ***
+CHI_D data missing -> assume delayed neutrons born in top group for materialmoder_neighbor[39m
+
+Framework Information:
+MOOSE Version:           git commit f052e463d8 on 2019-11-13
+LibMesh Version:         81589c1acb86765a0a1981b7fef5328e91fb92ab
+PETSc Version:           3.11.4
+SLEPc Version:           3.11.0
+Current Time:            Mon Jan 20 19:35:33 2020
+Executable Timestamp:    Fri Jan 10 00:04:32 2020
+
+Parallelism:
+  Num Processors:          1
+  Num Threads:             1
+
+Mesh: 
+  Parallel Type:           replicated
+  Mesh Dimension:          2
+  Spatial Dimension:       2
+  Nodes:                   
+    Total:                 2115
+    Local:                 2115
+  Elems:                   
+    Total:                 1960
+    Local:                 1960
+  Num Subdomains:          2
+  Num Partitions:          1
+
+Nonlinear System:
+  Num DOFs:                8697
+  Num Local DOFs:          8697
+  Variables:               { "group1" "group2" "temp" } { "pre1" "pre2" "pre3" "pre4" "pre5" "pre6" } 
+  Finite Element Types:    "LAGRANGE" "MONOMIAL" 
+  Approximation Orders:    "FIRST" "CONSTANT" 
+
+Relationship Managers:
+  Geometric and algebraic and coupling:ElementSideNeighborLayers (1 layer) for pres_nl, coupling_functor_check_nl
+  Algebraic:               ElementSideNeighborLayers (1 layer) for pres_aux
+  Default:                 libMesh::DefaultCoupling x 2
+
+Execution Information:
+  Executioner:             Transient
+  TimeStepper:             IterationAdaptiveDT
+  Solver Mode:             NEWTON
+  MOOSE Preconditioner:    SMP
+
+
+Time Step 0, time = 0
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
++----------------+----------------+----------------+
+
+
+Time Step 1, time = 0.001, dt = 0.001
+ 0 Nonlinear |R| = [32m1.304742e+08[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.023850e+01[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m9.557049e+00[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 2, time = 0.0022, dt = 0.0012
+ 0 Nonlinear |R| = [32m7.751204e+05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.681824e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.515222e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.321907e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 3, time = 0.00364, dt = 0.00144
+ 0 Nonlinear |R| = [32m8.701471e+04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.569926e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.545469e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.348499e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 4, time = 0.005368, dt = 0.001728
+ 0 Nonlinear |R| = [32m1.538727e+04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.992983e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.548937e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.376572e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 5, time = 0.0074416, dt = 0.0020736
+ 0 Nonlinear |R| = [32m7.799794e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.919754e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.400320e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.229902e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 6, time = 0.00992992, dt = 0.00248832
+ 0 Nonlinear |R| = [32m7.141929e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m8.185203e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.124860e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.946837e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 7, time = 0.0129159, dt = 0.00298598
+ 0 Nonlinear |R| = [32m6.915911e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.111492e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.182021e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.987981e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 8, time = 0.0164991, dt = 0.00358318
+ 0 Nonlinear |R| = [32m6.698351e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.490843e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.964131e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.791276e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 9, time = 0.0207989, dt = 0.00429982
+ 0 Nonlinear |R| = [32m6.450805e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.972509e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.858910e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.713923e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 10, time = 0.0259587, dt = 0.00515978
+ 0 Nonlinear |R| = [32m6.166957e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.568054e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.766167e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.631129e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 11, time = 0.0321504, dt = 0.00619174
+ 0 Nonlinear |R| = [32m5.843973e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.280352e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.428057e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.286841e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 12, time = 0.0395805, dt = 0.00743008
+ 0 Nonlinear |R| = [32m5.480230e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m4.097421e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.499602e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.385031e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 13, time = 0.0484966, dt = 0.0089161
+ 0 Nonlinear |R| = [32m5.075610e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m4.985626e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.213188e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.090646e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 14, time = 0.0591959, dt = 0.0106993
+ 0 Nonlinear |R| = [32m4.632068e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.884384e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.775026e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.657025e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+|   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 15, time = 0.0720351, dt = 0.0128392
+ 0 Nonlinear |R| = [32m4.154224e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m6.705642e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.471691e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.363456e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.000000e-03 |   9.220011e+02 |   9.220000e+02 |
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 16, time = 0.0874421, dt = 0.015407
+ 0 Nonlinear |R| = [32m3.649862e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m7.342030e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.210867e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.110704e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.200000e-03 |   9.220023e+02 |   9.220001e+02 |
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 17, time = 0.105931, dt = 0.0184884
+ 0 Nonlinear |R| = [32m3.130186e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m7.686180e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.959155e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.867325e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.640000e-03 |   9.220036e+02 |   9.220002e+02 |
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 18, time = 0.128117, dt = 0.0221861
+ 0 Nonlinear |R| = [32m2.609629e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m7.659327e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.809750e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.738710e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.368000e-03 |   9.220053e+02 |   9.220002e+02 |
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 19, time = 0.15474, dt = 0.0266233
+ 0 Nonlinear |R| = [32m2.105056e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m7.240536e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.650895e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.580081e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   7.441600e-03 |   9.220072e+02 |   9.220003e+02 |
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 20, time = 0.186688, dt = 0.031948
+ 0 Nonlinear |R| = [32m1.634251e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m6.482253e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.517990e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.443799e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   9.929920e-03 |   9.220095e+02 |   9.220004e+02 |
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 21, time = 0.225026, dt = 0.0383376
+ 0 Nonlinear |R| = [32m1.213778e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.499497e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.402474e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.317648e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.291590e-02 |   9.220121e+02 |   9.220005e+02 |
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 22, time = 0.271031, dt = 0.0460051
+ 0 Nonlinear |R| = [32m8.565520e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m4.432385e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.301227e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.207747e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.649908e-02 |   9.220152e+02 |   9.220007e+02 |
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 23, time = 0.326237, dt = 0.0552061
+ 0 Nonlinear |R| = [32m5.697037e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.399274e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.097964e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.011102e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.079890e-02 |   9.220187e+02 |   9.220008e+02 |
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 24, time = 0.392484, dt = 0.0662474
+ 0 Nonlinear |R| = [32m3.534085e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.465979e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m9.778338e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m9.195435e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.595868e-02 |   9.220228e+02 |   9.220010e+02 |
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 25, time = 0.471981, dt = 0.0794968
+ 0 Nonlinear |R| = [32m2.011759e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.644289e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m7.617549e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m7.159191e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.215042e-02 |   9.220274e+02 |   9.220012e+02 |
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 26, time = 0.567377, dt = 0.0953962
+ 0 Nonlinear |R| = [32m1.016262e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m9.091607e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m6.510231e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m6.214749e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.958050e-02 |   9.220325e+02 |   9.220015e+02 |
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 27, time = 0.681853, dt = 0.114475
+ 0 Nonlinear |R| = [32m4.121432e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.118309e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m6.324871e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m6.072796e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.849660e-02 |   9.220382e+02 |   9.220017e+02 |
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 28, time = 0.819223, dt = 0.137371
+ 0 Nonlinear |R| = [32m7.100959e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.241721e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m6.238642e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.993828e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.919592e-02 |   9.220445e+02 |   9.220021e+02 |
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 29, time = 0.984068, dt = 0.164845
+ 0 Nonlinear |R| = [32m1.186449e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.420552e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.349215e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.244283e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   7.203511e-02 |   9.220513e+02 |   9.220024e+02 |
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 30, time = 1.18188, dt = 0.197814
+ 0 Nonlinear |R| = [32m2.203368e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.671343e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m6.410971e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.842330e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   8.744213e-02 |   9.220585e+02 |   9.220028e+02 |
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 31, time = 1.41926, dt = 0.237376
+ 0 Nonlinear |R| = [32m2.821696e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m4.586669e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.741154e-06[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.491952e-06[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.059306e-01 |   9.220661e+02 |   9.220032e+02 |
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 32, time = 1.70411, dt = 0.284852
+ 0 Nonlinear |R| = [32m3.269712e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m7.680584e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.110033e-05[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.009020e-05[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.281167e-01 |   9.220738e+02 |   9.220036e+02 |
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 33, time = 2.04593, dt = 0.341822
+ 0 Nonlinear |R| = [32m3.660691e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.285397e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m4.462113e-05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m8.739123e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m8.396859e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.547400e-01 |   9.220817e+02 |   9.220041e+02 |
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 34, time = 2.45612, dt = 0.410186
+ 0 Nonlinear |R| = [32m4.052748e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.177584e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.835433e-04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m9.696613e-08[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m9.287053e-08[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.866880e-01 |   9.220895e+02 |   9.220046e+02 |
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 35, time = 2.94834, dt = 0.492224
+ 0 Nonlinear |R| = [32m4.482765e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.768364e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m7.870281e-04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.100425e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.053514e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.250256e-01 |   9.220974e+02 |   9.220052e+02 |
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 36, time = 3.53901, dt = 0.590668
+ 0 Nonlinear |R| = [32m4.979461e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m6.703385e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.547624e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.351816e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.301854e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.710307e-01 |   9.221053e+02 |   9.220058e+02 |
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 37, time = 4.24781, dt = 0.708802
+ 0 Nonlinear |R| = [32m5.561990e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.225642e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.663343e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.561144e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.497344e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.262369e-01 |   9.221134e+02 |   9.220065e+02 |
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 38, time = 5.09837, dt = 0.850562
+ 0 Nonlinear |R| = [32m6.224526e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m2.272094e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m7.765496e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.951321e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.877633e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.924842e-01 |   9.221220e+02 |   9.220073e+02 |
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 39, time = 6.11905, dt = 1.02067
+ 0 Nonlinear |R| = [32m6.902652e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m4.121033e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.294005e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m3.458423e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m3.239413e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.719811e-01 |   9.221314e+02 |   9.220083e+02 |
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 40, time = 7.34386, dt = 1.22481
+ 0 Nonlinear |R| = [32m7.426338e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m6.873121e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.100010e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m3.284687e-06[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.978806e-06[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.673773e-01 |   9.221422e+02 |   9.220094e+02 |
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 41, time = 8.81363, dt = 1.46977
+ 0 Nonlinear |R| = [32m7.507354e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m9.709602e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.436397e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.801214e-05[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.635219e-05[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   6.818528e-01 |   9.221548e+02 |   9.220107e+02 |
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 42, time = 10.5774, dt = 1.76373
+ 0 Nonlinear |R| = [32m6.864608e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.072588e+03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.092974e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m3.093177e-05[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m2.807633e-05[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   8.192233e-01 |   9.221698e+02 |   9.220124e+02 |
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 43, time = 12.6938, dt = 2.11647
+ 0 Nonlinear |R| = [32m5.492789e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m8.822877e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.093024e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m1.488038e-05[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.351494e-05[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   9.840680e-01 |   9.221882e+02 |   9.220145e+02 |
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 44, time = 15.2336, dt = 2.53977
+ 0 Nonlinear |R| = [32m3.780743e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m5.376695e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m7.569416e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m2.113744e-06[39m
+Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m1.925527e-06[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.181882e+00 |   9.222109e+02 |   9.220172e+02 |
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 45, time = 18.2813, dt = 3.04772
+ 0 Nonlinear |R| = [32m2.243732e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m2.510630e+02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.534245e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m5.160653e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.941330e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.419258e+00 |   9.222392e+02 |   9.220207e+02 |
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 46, time = 21.9386, dt = 3.65726
+ 0 Nonlinear |R| = [32m1.174866e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m9.719092e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.908908e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m5.390753e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.165345e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.704109e+00 |   9.222749e+02 |   9.220252e+02 |
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 47, time = 26.3273, dt = 4.38871
+ 0 Nonlinear |R| = [32m5.799315e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m3.679780e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.812927e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m4.866863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.659393e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.045931e+00 |   9.223207e+02 |   9.220313e+02 |
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 48, time = 31.5937, dt = 5.26646
+ 0 Nonlinear |R| = [32m3.156950e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.773346e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m1.996115e-04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m5.085892e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.876321e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.456118e+00 |   9.223801e+02 |   9.220396e+02 |
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 49, time = 37.9135, dt = 6.31975
+ 0 Nonlinear |R| = [32m2.169147e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.258871e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m3.401263e-05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m5.367789e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.189879e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.948341e+00 |   9.224583e+02 |   9.220511e+02 |
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 50, time = 45.4972, dt = 7.5837
+ 0 Nonlinear |R| = [32m1.734186e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.128381e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m8.358033e-06[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m4.956571e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m4.733373e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.539009e+00 |   9.225632e+02 |   9.220675e+02 |
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 51, time = 54.5976, dt = 9.10044
+ 0 Nonlinear |R| = [32m1.434942e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.039682e+01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m2.659303e-06[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 3 Nonlinear |R| = [32m5.547927e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 3
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.339367e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.247811e+00 |   9.227061e+02 |   9.220912e+02 |
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 52, time = 65.5182, dt = 10.9205
+ 0 Nonlinear |R| = [32m1.164089e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m8.917110e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m9.324997e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m8.745332e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.098373e+00 |   9.229033e+02 |   9.221260e+02 |
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 53, time = 78.6228, dt = 13.1046
+ 0 Nonlinear |R| = [32m9.061718e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m6.876527e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.760784e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.499056e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   6.119048e+00 |   9.231752e+02 |   9.221780e+02 |
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 54, time = 94.3483, dt = 15.7256
+ 0 Nonlinear |R| = [32m6.701162e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m4.690136e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.419377e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.197868e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   7.343858e+00 |   9.235417e+02 |   9.222555e+02 |
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 55, time = 113.219, dt = 18.8707
+ 0 Nonlinear |R| = [32m4.671728e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m2.787001e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.491066e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.271171e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   8.813629e+00 |   9.240089e+02 |   9.223687e+02 |
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 56, time = 135.864, dt = 22.6448
+ 0 Nonlinear |R| = [32m3.045492e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m1.419144e+00[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.463737e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.270866e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.057736e+01 |   9.245531e+02 |   9.225279e+02 |
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 57, time = 163.038, dt = 27.1738
+ 0 Nonlinear |R| = [32m1.840103e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m6.085163e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.578082e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.355921e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.269383e+01 |   9.251182e+02 |   9.227403e+02 |
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 58, time = 195.646, dt = 32.6085
+ 0 Nonlinear |R| = [32m1.021008e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m2.159124e-01[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.732575e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.531043e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.523359e+01 |   9.256357e+02 |   9.230073e+02 |
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 59, time = 234.776, dt = 39.1302
+ 0 Nonlinear |R| = [32m5.154748e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [31m6.232413e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.825982e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.603364e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.828131e+01 |   9.260572e+02 |   9.233246e+02 |
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 60, time = 281.733, dt = 46.9563
+ 0 Nonlinear |R| = [32m2.346703e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m1.439961e-02[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.306148e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.109044e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.193857e+01 |   9.263719e+02 |   9.236839e+02 |
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 61, time = 338.08, dt = 56.3475
+ 0 Nonlinear |R| = [32m9.550615e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m2.622384e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.586197e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.382833e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.632729e+01 |   9.266008e+02 |   9.240751e+02 |
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 62, time = 405.697, dt = 67.617
+ 0 Nonlinear |R| = [32m3.446674e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.710619e-04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.546080e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.307262e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.159374e+01 |   9.267763e+02 |   9.244872e+02 |
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 63, time = 486.838, dt = 81.1404
+ 0 Nonlinear |R| = [32m1.094705e-03[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m4.025566e-05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.784229e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.574271e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.791349e+01 |   9.269247e+02 |   9.249087e+02 |
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 64, time = 584.206, dt = 97.3685
+ 0 Nonlinear |R| = [32m3.039008e-04[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m3.361084e-06[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 2 Nonlinear |R| = [32m5.739434e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 2
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.522752e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.549719e+01 |   9.270598e+02 |   9.253267e+02 |
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 65, time = 701.048, dt = 116.842
+ 0 Nonlinear |R| = [32m7.328447e-05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.884415e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 1
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.614891e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.459763e+01 |   9.271849e+02 |   9.257267e+02 |
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 66, time = 841.259, dt = 140.211
+ 0 Nonlinear |R| = [32m1.530065e-05[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.261579e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 1
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.048708e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   6.551815e+01 |   9.272980e+02 |   9.260938e+02 |
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 67, time = 1009.51, dt = 168.253
+ 0 Nonlinear |R| = [32m2.783552e-06[39m
+  Linear solve converged due to CONVERGED_RTOL iterations 1
+ 1 Nonlinear |R| = [32m5.385791e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 1
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [31m5.184634e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   7.862279e+01 |   9.273955e+02 |   9.264143e+02 |
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 68, time = 1211.41, dt = 201.903
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   9.434834e+01 |   9.274750e+02 |   9.266786e+02 |
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 69, time = 1453.7, dt = 242.284
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.132190e+02 |   9.275356e+02 |   9.268827e+02 |
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 70, time = 1744.44, dt = 290.741
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.358638e+02 |   9.275784e+02 |   9.270289e+02 |
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 71, time = 2093.33, dt = 348.889
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.630376e+02 |   9.276062e+02 |   9.271252e+02 |
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 72, time = 2512, dt = 418.667
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   1.956461e+02 |   9.276226e+02 |   9.271831e+02 |
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 73, time = 3014.4, dt = 502.4
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.347763e+02 |   9.276314e+02 |   9.272144e+02 |
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 74, time = 3617.28, dt = 602.88
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   2.817326e+02 |   9.276356e+02 |   9.272296e+02 |
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 75, time = 4340.73, dt = 723.456
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   3.380801e+02 |   9.276374e+02 |   9.272362e+02 |
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 76, time = 5208.88, dt = 868.147
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.056971e+02 |   9.276380e+02 |   9.272387e+02 |
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
+|   5.208879e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 77, time = 6250.66, dt = 1041.78
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   4.868375e+02 |   9.276383e+02 |   9.272395e+02 |
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
+|   5.208879e+03 |   9.276383e+02 |   9.272398e+02 |
+|   6.250656e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 78, time = 7500.79, dt = 1250.13
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   5.842060e+02 |   9.276383e+02 |   9.272397e+02 |
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
+|   5.208879e+03 |   9.276383e+02 |   9.272398e+02 |
+|   6.250656e+03 |   9.276383e+02 |   9.272398e+02 |
+|   7.500788e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 79, time = 9000.95, dt = 1500.16
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   7.010482e+02 |   9.276383e+02 |   9.272398e+02 |
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
+|   5.208879e+03 |   9.276383e+02 |   9.272398e+02 |
+|   6.250656e+03 |   9.276383e+02 |   9.272398e+02 |
+|   7.500788e+03 |   9.276383e+02 |   9.272398e+02 |
+|   9.000947e+03 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
+
+Time Step 80, time = 10000, dt = 999.053
+ 0 Nonlinear |R| = [32m6.821863e-07[39m
+Nonlinear solve converged due to CONVERGED_FNORM_ABS iterations 0
+[32m Solve Converged![39m
+
+Outlier Variable Residual Norms:
+  group1: [33m5.192082e-07[39m
+  temp: [33m3.609033e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+
+| time           | temp_fuel      | temp_moder     |
++----------------+----------------+----------------+
+:                :                :                :
+|   8.412589e+02 |   9.276383e+02 |   9.272398e+02 |
+|   1.009512e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.211415e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.453699e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.744440e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.093329e+03 |   9.276383e+02 |   9.272398e+02 |
+|   2.511995e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.014396e+03 |   9.276383e+02 |   9.272398e+02 |
+|   3.617276e+03 |   9.276383e+02 |   9.272398e+02 |
+|   4.340732e+03 |   9.276383e+02 |   9.272398e+02 |
+|   5.208879e+03 |   9.276383e+02 |   9.272398e+02 |
+|   6.250656e+03 |   9.276383e+02 |   9.272398e+02 |
+|   7.500788e+03 |   9.276383e+02 |   9.272398e+02 |
+|   9.000947e+03 |   9.276383e+02 |   9.272398e+02 |
+|   1.000000e+04 |   9.276383e+02 |   9.272398e+02 |
++----------------+----------------+----------------+
+
